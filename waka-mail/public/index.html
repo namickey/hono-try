@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>わか</title>
+    <link href="/favicon.ico" rel="icon" />
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+
+<body>
+    <h2><a href="/">わかメール</a></h2>
+    <div hx-get="/list" id="talk-list" hx-trigger="load"></div>
+    <form id="talk-form">
+        <p><input type="text" id="talkText" name="talkText" size="30" style="font-size:100%" /></p>
+        <p><button hx-post="/talk1" hx-target="ul" hx-swap="beforeend">わか送信<img
+                    src="/img/105.png"
+                    style="max-width:50px;" /></button></P>
+        <p><button hx-post="/talk2" hx-target="ul" hx-swap="beforeend">まま送信<img
+                    src="/img/103.png"
+                    style="max-width:50px;" /></button></p>
+        <p><button hx-post="/talk3" hx-target="ul" hx-swap="beforeend">ちち送信<img
+                    src="/img/101.png"
+                    style="max-width:50px;" /></button></p>
+    </form>
+    <br />
+    <br />
+    <button hx-post="/reset">全てクリア</button>
+    <script>
+        document.addEventListener('htmx:afterSwap', function (event) {
+            const talkText = document.getElementById('talkText');
+            if (talkText) {
+                talkText.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
