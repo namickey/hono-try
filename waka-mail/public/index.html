@@ -27,6 +27,7 @@
     <br />
     <br />
     <button hx-post="/reset">全てクリア</button>
+    <button id="btn">Push通知を許可する</button>
     <script>
         document.addEventListener('htmx:afterSwap', function (event) {
             const talkText = document.getElementById('talkText');
@@ -35,6 +36,7 @@
             }
         });
     </script>
+    <script src="/js/push-subscription.js"></script>
 </body>
 
 </html>

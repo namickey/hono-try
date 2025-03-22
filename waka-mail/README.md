@@ -17,9 +17,11 @@ wrangler login
 ```shell
 wrangler d1 execute mydb --local --file=./schema.sql
 wrangler d1 execute mydb --local --command="SELECT id, name, message, datetime(date, 'localtime') as date FROM chat"
+wrangler d1 execute mydb --local --command="SELECT name, pushsub, datetime(date, 'localtime') as date FROM sub"
 
 wrangler d1 execute mydb --remote --file=./schema.sql
 wrangler d1 execute mydb --remote --command="SELECT id, name, message, datetime(date, 'localtime') as date FROM chat"
+wrangler d1 execute mydb --remote --command="SELECT name, pushsub, datetime(date, 'localtime') as date FROM sub"
 ```
 
 ```
