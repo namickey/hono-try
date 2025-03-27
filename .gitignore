@@ -1,0 +1,13 @@
+*.yaml
+*.jpg
+out.txt
+*.jpeg
+__pycache__/
+arp.txt
+tmp.txt
+count.txt
+*.log
+.venv1/
+stop-file.txt
+node_modules/
+*.key
