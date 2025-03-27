@@ -35,6 +35,7 @@ app.get('/aa', (req, res) => {
         .catch(err => {
             console.error('通知の送信に失敗しました:', err);
         });
+    console.log('push ok!');
     res.send('push ok!');
 });
 
@@ -66,6 +67,7 @@ app.get('/wakapushsub', (req, res) => {
         .catch(err => {
             console.error('通知の送信に失敗しました:', err);
         });
+    console.log('push ok!');
     res.send('push ok!');
 });
 
