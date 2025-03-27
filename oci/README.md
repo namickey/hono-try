@@ -6,8 +6,9 @@
 sudo dnf update
 
 dnf module list nodejs
-dnf module install nodejs:22/common
+sudo dnf module install nodejs:22/common
 
+sudo dnf install git
 ```
 
 ```sh
