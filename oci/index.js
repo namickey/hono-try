@@ -31,11 +31,9 @@ app.get('/aa', (req, res) => {
     webPush.sendNotification(subscription, JSON.stringify(notification))
         .then(() => {
             console.log('通知を送信しました');
-            process.exit(0);
         })
         .catch(err => {
             console.error('通知の送信に失敗しました:', err);
-            process.exit(1);
         });
     res.send('push ok!');
 });
