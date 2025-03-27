@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
-import { D1Database } from '@cloudflare/workers-types'
+import { KVNamespace, D1Database } from '@cloudflare/workers-types'
 
 type Bindings = {
+  MY_KV: KVNamespace
   MY_DB: D1Database
 }
 
@@ -24,12 +25,18 @@ app.post('/talk1', async (c) => {
 app.post('/talk2', async (c) => {
   const chat = String((await c.req.parseBody())['talkText'])
   await insertMessage(c, 'まま', chat)
+  const url = await c.env.MY_KV.get("pushurl")
+  const result = await fetch(String(url))
+  console.log(await result.text())
   return createRedirect()
 })
 
 app.post('/talk3', async (c) => {
   const chat = String((await c.req.parseBody())['talkText'])
   await insertMessage(c, 'ちち', chat)
+  const url = await c.env.MY_KV.get("pushurl")
+  const result = await fetch(String(url))
+  console.log(await result.text())
   return createRedirect()
 })
 

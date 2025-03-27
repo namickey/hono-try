@@ -4,6 +4,13 @@
   "main": "src/index.tsx",
   "compatibility_date": "2025-03-20",
   "assets": {"directory": "public"},
+  "kv_namespaces": [
+    {
+      "binding": "MY_KV",
+      "id": "0604570562244e76b0bf29e880d2211d",
+      "preview_id": "c76209e1efa84212ba6210cbc8e5285d"
+    }
+  ],
   "d1_databases": [
     {
       "binding": "MY_DB",
