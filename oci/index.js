@@ -37,6 +37,7 @@ app.get('/aa', (req, res) => {
             console.error('通知の送信に失敗しました:', err);
             process.exit(1);
         });
+    res.send('push ok!');
 });
 
 app.listen(3000, () => {

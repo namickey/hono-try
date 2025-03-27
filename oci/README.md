@@ -9,6 +9,15 @@ dnf module list nodejs
 sudo dnf module install nodejs:22/common
 
 sudo dnf install git
+
+sudo firewall-cmd --add-port 3000/tcp --zone=public --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-all --zone=public
+
+sudo setenforce 0
+
+sudo vi /etc/selinux/config
+SELINUX=permissive
 ```
 
 ```sh
